@@ -1,0 +1,35 @@
+.mission {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  gap: 80px;
+  padding: 100px 64px 100px;
+  align-items: start;
+}
+
+.mission .left .micro-label {
+  margin-top: 6px;
+}
+
+.mission .right p {
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.45;
+  font-weight: 300;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  max-width: 640px;
+}
+
+.mission .right .learn-btn {
+  margin-top: 32px;
+}
+
+@media (max-width: 860px) {
+  .mission {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 60px 22px;
+  }
+  .mission .right p {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,123 @@
+.editorial {
+  position: relative;
+  padding: 60px 0 120px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.editorial .label {
+  position: absolute;
+  top: 20px;
+  left: 48px;
+}
+
+.editorial .big-text {
+  font-family: var(--font-serif);
+  font-size: clamp(100px, 20vw, 240px);
+  line-height: 0.85;
+  color: var(--text-primary);
+  opacity: 0.08;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  margin-top: 20px;
+}
+
+.editorial .bread-wrap {
+  position: relative;
+  margin-top: -120px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.editorial .bread-wrap img {
+  height: clamp(260px, 40vw, 440px);
+  width: auto;
+  border-radius: var(--radius-card);
+  object-fit: cover;
+}
+
+.editorial .bread-wrap img.slice {
+  height: clamp(200px, 30vw, 320px);
+  margin-bottom: 20px;
+}
+
+.editorial .product-card {
+  position: absolute;
+  bottom: 30px;
+  left: 48px;
+  z-index: 5;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card-sm);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+.editorial .product-card .info {
+  text-align: left;
+}
+
+.editorial .product-card .info .name {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.editorial .product-card .info .sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.editorial .product-card .price {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.editorial .product-card .badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--text-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .editorial {
+    padding: 40px 0 80px;
+  }
+  .editorial .label {
+    left: 22px;
+  }
+  .editorial .big-text {
+    font-size: clamp(70px, 28vw, 120px);
+  }
+  .editorial .bread-wrap {
+    margin-top: -60px;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .editorial .bread-wrap img.slice {
+    margin-bottom: 0;
+  }
+  .editorial .product-card {
+    position: static;
+    margin: 20px auto 0;
+    width: fit-content;
+  }
+}

@@ -1,0 +1,16 @@
+.announcement {
+  text-align: center;
+  padding: 14px 20px 10px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.announcement span {
+  display: block;
+}
+
+.announcement span:first-child {
+  text-transform: uppercase;
+}
