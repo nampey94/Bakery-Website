@@ -8,10 +8,10 @@ export default function About() {
       <div className={`about-grid${visible ? ' is-visible' : ''}`}>
         <div className="about-images">
           <img className="main-img"
-            src="https://images.unsplash.com/photo-1517433670267-08bbd415497e?w=800&q=85&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1693483640461-267d788b6148?w=800&q=85&auto=format&fit=crop"
             alt="Freshly baked bread cooling on racks" loading="lazy" />
           <img className="sub-img"
-            src="https://images.unsplash.com/photo-1568254183919-78a4f9a70371?w=500&q=80&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=500&q=80&auto=format&fit=crop"
             alt="A baker shaping dough by hand" loading="lazy" />
         </div>
         <div className="about-text">

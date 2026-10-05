@@ -15,7 +15,7 @@ export default function EditorialProducts() {
         />
         <img
           className="slice"
-          src="https://images.unsplash.com/photo-1585478259715-876acc5be552?w=600&q=85&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1586657263857-346c4b712ff5?w=600&q=85&auto=format&fit=crop"
           alt="A sliced piece of sourdough bread"
           loading="lazy"
         />

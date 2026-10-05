@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="hero" id="top">
       <div className="hero-image-wrap">
         <img
-          src="https://images.unsplash.com/photo-1525610553991-2bed961c5617?w=1400&q=85&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1612366747681-e4ca6992b1e9?w=1400&q=85&auto=format&fit=crop"
           alt="A woman enjoying a fresh croissant at the bakery"
           loading="eager"
         />
@@ -18,7 +18,7 @@ export default function Hero() {
         {/* Floating left card */}
         <div className="hero-card-left">
           <img
-            src="https://images.unsplash.com/photo-1568254183919-78a4f9a70371?w=400&q=80&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=400&q=80&auto=format&fit=crop"
             alt="A baker holding a tray of fresh bread"
             loading="lazy"
           />
@@ -37,7 +37,7 @@ export default function Hero() {
             </svg>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1597765718415-4c52ae1c0da9?w=400&q=80&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1593872571314-4a735d4b27b0?w=400&q=80&auto=format&fit=crop"
             alt="A freshly baked cinnamon roll"
             loading="lazy"
           />

@@ -37,7 +37,7 @@ export default function Contact() {
         </div>
         <div className="contact-map">
           <img
-            src="https://images.unsplash.com/photo-1524661135-423995f22d1b?w=800&q=80&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1700915704616-b455b3679024?w=800&q=80&auto=format&fit=crop"
             alt="Map showing bakery location in Shoreditch, London"
             loading="lazy"
           />
