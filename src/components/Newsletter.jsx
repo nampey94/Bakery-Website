@@ -21,22 +21,22 @@ export default function Newsletter() {
   return (
     <section className="newsletter reveal" ref={ref} id="newsletter">
       <div className={`newsletter-inner${visible ? ' is-visible' : ''}`}>
-        <h2>Fresh from the oven.</h2>
-        <p>Get new bakes, seasonal drops and bakery news in your inbox.</p>
+        <h2>تازه از تنور.</h2>
+        <p>اخبار نانوایی، محصولات فصلی و نان تازه را در ایمیل خود دریافت کنید.</p>
         <form className="newsletter-form" onSubmit={handleSubmit} noValidate>
           <input
             type="email"
-            placeholder="Your email address"
+            placeholder="آدرس ایمیل شما"
             value={email}
             onChange={(e) => { setEmail(e.target.value); setStatus('idle') }}
-            aria-label="Email address"
+            aria-label="آدرس ایمیل"
             aria-invalid={status === 'error'}
           />
-          <button type="submit">Subscribe</button>
+          <button type="submit">عضویت</button>
         </form>
-        {status === 'error' && <div className="newsletter-error">Please enter a valid email address.</div>}
+        {status === 'error' && <div className="newsletter-error">لطفاً یک آدرس ایمیل معتبر وارد کنید.</div>}
         {status === 'success' && (
-          <div className="newsletter-success show">Thank you! You're on the list. 🥐</div>
+          <div className="newsletter-success show">سپاسگزاریم! شما در لیست هستید. 🥐</div>
         )}
       </div>
     </section>

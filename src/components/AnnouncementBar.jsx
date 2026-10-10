@@ -3,8 +3,8 @@ import './AnnouncementBar.css'
 export default function AnnouncementBar() {
   return (
     <div className="announcement" aria-hidden="true">
-      <span>Anaslesio Ungersyz</span>
-      <span>Last Brejita</span>
+      <span>LOAFA</span>
+      <span>نان گرم، دل گرم</span>
     </div>
   )
 }

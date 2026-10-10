@@ -13,8 +13,8 @@
   --radius-card: 20px;
   --radius-card-sm: 14px;
   --radius-input: 14px;
-  --font-serif: 'Instrument Serif', 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Instrument Serif', 'Vazirmatn', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 

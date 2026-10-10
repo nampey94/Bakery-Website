@@ -4,22 +4,22 @@ import ProductCard from './ProductCard.jsx'
 import { useReveal } from '../hooks/useReveal.js'
 import './ProductCatalog.css'
 
-const FILTERS = ['All', 'Breads', 'Pastries', 'Sweet', 'Seasonal']
+const FILTERS = ['همه', 'نان‌ها', 'شیرینی‌ها', 'شیرین', 'فصلی']
 
 export default function ProductCatalog({ onSelectProduct }) {
-  const [filter, setFilter] = useState('All')
+  const [filter, setFilter] = useState('همه')
   const { ref, visible } = useReveal()
 
   const filtered = useMemo(() => {
-    if (filter === 'All') return products
+    if (filter === 'همه') return products
     return products.filter((p) => p.category === filter)
   }, [filter])
 
   return (
     <section className="catalog reveal" ref={ref} id="catalog">
       <div className="catalog-header">
-        <h2>Our Catalog</h2>
-        <div className="filters" role="tablist" aria-label="Product categories">
+        <h2>فهرست محصولات</h2>
+        <div className="filters" role="tablist" aria-label="دسته‌بندی محصولات">
           {FILTERS.map((f) => (
             <button
               key={f}

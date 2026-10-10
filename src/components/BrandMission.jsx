@@ -6,16 +6,15 @@ export default function BrandMission() {
   return (
     <section className="mission reveal" ref={ref} id="mission">
       <div className={`left${visible ? ' is-visible' : ''}`}>
-        <span className="micro-label">Brand Mission</span>
+        <span className="micro-label">مأموریت برند</span>
       </div>
       <div className="right">
         <p>
-          The brand's goal is to give customers a feeling of loveliness and
-          homely warmth — with a modern touch. We've designed a brand that is
-          warm, yet modern.
+          هدف برند ما این است که به مشتریان احساس زیبایی و گرمای خانه‌ای
+          را با لمسی مدرن بدهیم. برندی طراحی کرده‌ایم که گرم اما مدرن است.
         </p>
         <a className="btn-pill btn-pill-outline learn-btn" href="#about">
-          Learn more
+          بیشتر بدانید
         </a>
       </div>
     </section>

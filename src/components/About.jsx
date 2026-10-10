@@ -9,27 +9,27 @@ export default function About() {
         <div className="about-images">
           <img className="main-img"
             src="https://images.unsplash.com/photo-1693483640461-267d788b6148?w=800&q=85&auto=format&fit=crop"
-            alt="Freshly baked bread cooling on racks" loading="lazy" />
+            alt="نان تازه روی قفسه‌ها" loading="lazy" />
           <img className="sub-img"
             src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=500&q=80&auto=format&fit=crop"
-            alt="A baker shaping dough by hand" loading="lazy" />
+            alt="نانوا در حال آماده‌سازی خمیر" loading="lazy" />
         </div>
         <div className="about-text">
-          <h2>The Bake is a modern artisan bakery built around simple ingredients, careful craft and everyday rituals.</h2>
-          <p>Every loaf and pastry starts before dawn. We mix, shape, and bake in small batches so that what you taste was made hours — not days — ago.</p>
-          <p>No shortcuts, no preservatives. Just flour, water, salt, time, and the warmth of a real oven.</p>
+          <h2>لوفا یک نانوایی سنتی مدرن است که حول مواد ساده، صنعت دقیق و آیین‌های روزمره ساخته شده است.</h2>
+          <p>هر نان و شیرینی پیش از طلوع آفتاب شروع می‌شود. ما در دسته‌های کوچک مخلوط، شکل و پخت می‌کنیم تا آنچه می‌چشیدید ساعت‌ها — نه روزها — پیش ساخته شده باشد.</p>
+          <p>بی‌راه‌رو، بدون مواد نگهدارنده. فقط آرد، آب، نمک، زمان و گرمی یک تنور واقعی.</p>
           <div className="about-stats">
             <div className="about-stat">
-              <div className="num">12+</div>
-              <div className="label">Years of Craft</div>
+              <div className="num">۱۲+</div>
+              <div className="label">سال صنعت</div>
             </div>
             <div className="about-stat">
-              <div className="num">24</div>
-              <div className="label">Daily Bakes</div>
+              <div className="num">۲۴</div>
+              <div className="label">پخت روزانه</div>
             </div>
             <div className="about-stat">
-              <div className="num">100%</div>
-              <div className="label">Fresh Ingredients</div>
+              <div className="num">۱۰۰٪</div>
+              <div className="label">مواد تازه</div>
             </div>
           </div>
         </div>

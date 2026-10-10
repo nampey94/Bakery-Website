@@ -2,25 +2,25 @@ import './Footer.css'
 
 export default function Footer({ onNavClick }) {
   const links = [
-    { label: 'Catalog', id: 'catalog' },
-    { label: 'About', id: 'about' },
-    { label: 'Reviews', id: 'reviews' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'محصولات', id: 'catalog' },
+    { label: 'درباره ما', id: 'about' },
+    { label: 'نظرات', id: 'reviews' },
+    { label: 'تماس', id: 'contact' },
   ]
   return (
     <footer className="footer">
       <div className="footer-top">
-        <div className="footer-logo">the bake</div>
-        <nav className="footer-links" aria-label="Footer">
+        <div className="footer-logo">LOAFA</div>
+        <nav className="footer-links" aria-label="پاورقی">
           {links.map((l) => (
             <a key={l.id} href={`#${l.id}`} onClick={(e) => onNavClick(e, l.id)}>{l.label}</a>
           ))}
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">اینستاگرام</a>
         </nav>
       </div>
       <div className="footer-bottom">
-        <span>© 2026 The Bake. All rights reserved.</span>
-        <span>Made with care in London.</span>
+        <span>© ۲۰۲۶ لوفا. تمام حقوق محفوظ است.</span>
+        <span>ساخته شده با عشق در لندن.</span>
       </div>
     </footer>
   )

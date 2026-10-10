@@ -27,14 +27,14 @@ export default function ProductModal({ product, onClose }) {
   return (
     <div className="modal-overlay open" onClick={onClose} role="dialog" aria-modal="true" aria-label={product.name}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" aria-label="Close" onClick={onClose}>×</button>
+        <button className="modal-close" aria-label="بستن" onClick={onClose}>×</button>
         <img className="modal-img" src={product.image} alt={product.name} />
         <div className="modal-content">
           <span className="cat">{product.category}</span>
           <h2>{product.name}</h2>
           <p className="desc">{product.description}</p>
           <div className="detail-section">
-            <div className="label">Ingredients</div>
+            <div className="label">مواد تشکیل‌دهنده</div>
             <div className="tags">
               {product.ingredients.map((ing) => (
                 <span className="tag" key={ing}>{ing}</span>
@@ -42,7 +42,7 @@ export default function ProductModal({ product, onClose }) {
             </div>
           </div>
           <div className="detail-section">
-            <div className="label">Allergens</div>
+            <div className="label">مواد حساسیت‌زا</div>
             <div className="tags">
               {product.allergens.map((a) => (
                 <span className="tag" key={a}>{a}</span>
@@ -52,14 +52,14 @@ export default function ProductModal({ product, onClose }) {
           <div className="price-row">
             <span className="price">${product.price * qty}</span>
             <div className="qty-control">
-              <button aria-label="Decrease quantity" onClick={() => setQty((q) => Math.max(1, q - 1))}>−</button>
+              <button aria-label="کاهش تعداد" onClick={() => setQty((q) => Math.max(1, q - 1))}>−</button>
               <span>{qty}</span>
-              <button aria-label="Increase quantity" onClick={() => setQty((q) => q + 1)}>+</button>
+              <button aria-label="افزایش تعداد" onClick={() => setQty((q) => q + 1)}>+</button>
             </div>
           </div>
           <button className="btn-pill btn-pill-dark" style={{ width: '100%', marginTop: 8 }}
             onClick={() => { addToCart(product, qty); onClose() }}>
-            Add to Cart — ${product.price * qty}
+            افزودن به سبد — ${product.price * qty}
           </button>
         </div>
       </div>
