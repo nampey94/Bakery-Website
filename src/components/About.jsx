@@ -4,7 +4,7 @@ import './About.css'
 export default function About() {
   const { ref, visible } = useReveal()
   return (
-    <section className="about reveal" ref={ref} id="about">
+    <section className={`about reveal${visible ? ' is-visible' : ''}`} ref={ref} id="about">
       <div className={`about-grid${visible ? ' is-visible' : ''}`}>
         <div className="about-images">
           <img className="main-img"

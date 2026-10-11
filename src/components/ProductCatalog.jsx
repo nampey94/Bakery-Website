@@ -16,7 +16,7 @@ export default function ProductCatalog({ onSelectProduct }) {
   }, [filter])
 
   return (
-    <section className="catalog reveal" ref={ref} id="catalog">
+    <section className={`catalog reveal${visible ? ' is-visible' : ''}`} ref={ref} id="catalog">
       <div className="catalog-header">
         <h2>فهرست محصولات</h2>
         <div className="filters" role="tablist" aria-label="دسته‌بندی محصولات">

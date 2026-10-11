@@ -14,7 +14,7 @@ export default function ContactPage() {
   }
 
   return (
-    <section className="contact-page reveal" ref={ref}>
+    <section className={`contact-page reveal${visible ? ' is-visible' : ''}`} ref={ref} id="contact">
       <div className={`contact-page-inner${visible ? ' is-visible' : ''}`}>
         <span className="micro-label">در تماس باشید</span>
         <h1 className="contact-page-title">تماس با ما</h1>

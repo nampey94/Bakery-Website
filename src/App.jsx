@@ -33,16 +33,6 @@ export default function App() {
     e.preventDefault()
     setMenuOpen(false)
 
-    if (id === 'menu') {
-      navigate('/menu')
-      return
-    }
-
-    if (id === 'contact') {
-      navigate('/contact')
-      return
-    }
-
     if (id === 'top') {
       if (location.pathname !== '/') {
         navigate('/')
@@ -83,9 +73,11 @@ export default function App() {
                   <FeaturedProducts />
                   <EditorialProducts />
                   <ProductCatalog onSelectProduct={setSelectedProduct} />
+                  <BakeryMenu />
                   <About />
                   <Reviews />
                   <Newsletter />
+                  <ContactPage />
                 </>
               } />
               <Route path="/menu" element={<BakeryMenu />} />

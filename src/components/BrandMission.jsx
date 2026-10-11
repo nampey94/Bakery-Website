@@ -4,7 +4,7 @@ import './BrandMission.css'
 export default function BrandMission() {
   const { ref, visible } = useReveal()
   return (
-    <section className="mission reveal" ref={ref} id="mission">
+    <section className={`mission reveal${visible ? ' is-visible' : ''}`} ref={ref} id="mission">
       <div className={`left${visible ? ' is-visible' : ''}`}>
         <span className="micro-label">مأموریت برند</span>
       </div>

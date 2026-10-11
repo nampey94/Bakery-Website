@@ -19,7 +19,7 @@ export default function Newsletter() {
   }
 
   return (
-    <section className="newsletter reveal" ref={ref} id="newsletter">
+    <section className={`newsletter reveal${visible ? ' is-visible' : ''}`} ref={ref} id="newsletter">
       <div className={`newsletter-inner${visible ? ' is-visible' : ''}`}>
         <h2>تازه از تنور.</h2>
         <p>اخبار نانوایی، محصولات فصلی و نان تازه را در ایمیل خود دریافت کنید.</p>

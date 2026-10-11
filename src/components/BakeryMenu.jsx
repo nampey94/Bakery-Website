@@ -7,7 +7,7 @@ export default function BakeryMenu() {
   const { ref, visible } = useReveal()
 
   return (
-    <section className="bakery-menu">
+    <section className="bakery-menu" id="menu">
       <div className="menu-banner">
         <img src="/bakery-menu.jpg" alt="شیرینی‌های تازه‌پز لوفا" />
         <div className="menu-banner-overlay">
@@ -17,7 +17,7 @@ export default function BakeryMenu() {
         </div>
       </div>
 
-      <div className="menu-content reveal" ref={ref}>
+      <div className={`menu-content reveal${visible ? ' is-visible' : ''}`} ref={ref}>
         <div className="menu-intro">
           <h2>انتخاب شما</h2>
           <p>تعداد مورد نظر از هر شیرینی را انتخاب کنید و به سفارش اضافه کنید</p>

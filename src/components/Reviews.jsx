@@ -17,7 +17,7 @@ function Stars({ count }) {
 export default function Reviews() {
   const { ref, visible } = useReveal()
   return (
-    <section className="reviews reveal" ref={ref} id="reviews">
+    <section className={`reviews reveal${visible ? ' is-visible' : ''}`} ref={ref} id="reviews">
       <h2 className={visible ? ' is-visible' : ''}>نظرات</h2>
       <div className="reviews-scroll">
         {reviews.map((r) => (

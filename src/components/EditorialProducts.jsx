@@ -4,7 +4,7 @@ import './EditorialProducts.css'
 export default function EditorialProducts() {
   const { ref, visible } = useReveal()
   return (
-    <section className="editorial reveal" ref={ref} id="editorial">
+    <section className={`editorial reveal${visible ? ' is-visible' : ''}`} ref={ref} id="editorial">
       <span className="micro-label label">محصولات</span>
       <div className={`big-text${visible ? ' is-visible' : ''}`}>LOAFA</div>
       <div className="bread-wrap">

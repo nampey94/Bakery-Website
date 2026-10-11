@@ -5,7 +5,7 @@ import './FeaturedProducts.css'
 export default function FeaturedProducts() {
   const { ref, visible } = useReveal()
   return (
-    <section className="featured reveal" ref={ref} id="featured">
+    <section className={`featured reveal${visible ? ' is-visible' : ''}`} ref={ref} id="featured">
       <div className={`featured-grid${visible ? ' is-visible' : ''}`}>
         {featuredCategories.map((cat, i) => (
           <article className="featured-card" key={cat.id} tabIndex={0} aria-label={cat.name}>
