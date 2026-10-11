@@ -3,7 +3,7 @@
 }
 
 .newsletter-inner {
-  background: var(--text-primary);
+  background: #1C1C1C;
   border-radius: var(--radius-container);
   padding: 64px 48px;
   text-align: center;
@@ -54,7 +54,7 @@
   padding: 14px 28px;
   border-radius: 999px;
   background: #fff;
-  color: var(--text-primary);
+  color: #0A0A0A;
   font-size: 14px;
   font-weight: 500;
   white-space: nowrap;

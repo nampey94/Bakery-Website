@@ -159,7 +159,7 @@
 .cart-item-right .item-subtotal {
   font-size: 15px;
   font-weight: 600;
-  color: #4A3225;
+  color: var(--text-primary);
 }
 
 .cart-item .remove {

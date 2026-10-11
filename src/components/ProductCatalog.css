@@ -41,7 +41,7 @@
 
 .filter-btn.active {
   background: var(--text-primary);
-  color: #fff;
+  color: #0A0A0A;
   border-color: var(--text-primary);
 }
 
