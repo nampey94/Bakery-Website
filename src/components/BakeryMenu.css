@@ -76,23 +76,32 @@
   color: var(--text-secondary);
 }
 
-/* ---- Grid ---- */
+/* ---- Horizontal scroll ---- */
 .menu-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+  cursor: grab;
 }
 
-@media (max-width: 1024px) {
-  .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.menu-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-grid:active {
+  cursor: grabbing;
+}
+
+.menu-grid .menu-card {
+  flex: 0 0 clamp(260px, 80vw, 340px);
+  scroll-snap-align: start;
 }
 
 @media (max-width: 600px) {
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
   .menu-content {
     padding: 40px 20px 60px;
   }
