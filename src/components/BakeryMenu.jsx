@@ -1,33 +1,43 @@
+import { motion } from 'framer-motion'
 import { menuProducts } from '../data/products.js'
 import MenuProductCard from './MenuProductCard.jsx'
-import { useReveal } from '../hooks/useReveal.js'
+import { fadeUp, staggerContainer, viewport } from '../hooks/motion.js'
 import './BakeryMenu.css'
 
 export default function BakeryMenu() {
-  const { ref, visible } = useReveal()
-
   return (
     <section className="bakery-menu" id="menu">
-      <div className="menu-banner">
+      <motion.div
+        className="menu-banner"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={viewport}
+        transition={{ duration: 0.8 }}
+      >
         <img src="/bakery-menu.jpg" alt="شیرینی‌های تازه‌پز لوفا" />
         <div className="menu-banner-overlay">
           <span className="micro-label">منوی شیرینی‌ها</span>
           <h1>شیرینی‌های تازه‌پز</h1>
           <p>هر روز صبح با کره فرانسوی و شکلات والرونا پخته می‌شوند</p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className={`menu-content reveal${visible ? ' is-visible' : ''}`} ref={ref}>
-        <div className="menu-intro">
+      <motion.div
+        className="menu-content"
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+      >
+        <motion.div className="menu-intro" variants={fadeUp}>
           <h2>انتخاب شما</h2>
           <p>تعداد مورد نظر از هر شیرینی را انتخاب کنید و به سفارش اضافه کنید</p>
-        </div>
-        <div className={`menu-grid${visible ? ' is-visible' : ''}`}>
+        </motion.div>
+        <motion.div className="menu-grid" variants={staggerContainer}>
           {menuProducts.map((p) => (
             <MenuProductCard key={p.id} product={p} />
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

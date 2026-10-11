@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+import { ease } from '../hooks/motion.js'
 import './Hero.css'
 
 export default function Hero() {
@@ -9,14 +11,23 @@ export default function Hero() {
           alt="شیرینی تازه در نانوایی"
           loading="eager"
         />
-        <h1 className="hero-headline">
+        <motion.h1
+          className="hero-headline"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease, delay: 0.2 }}
+        >
           شیرینی تازه برای<br />
           تمام روز.<br />
           <span className="bold">برای هر روز.</span>
-        </h1>
+        </motion.h1>
 
-        {/* Floating left card */}
-        <div className="hero-card-left">
+        <motion.div
+          className="hero-card-left"
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease, delay: 0.5 }}
+        >
           <img
             src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=400&q=80&auto=format&fit=crop"
             alt="نانوا با سینی نان تازه"
@@ -25,10 +36,14 @@ export default function Hero() {
           <div className="card-body">
             <p>ما برای کسانی ساخته شده‌ایم که قدر صنعت صادقانه و کار روزمره را می‌دانند.</p>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Floating right card */}
-        <div className="hero-card-right">
+        <motion.div
+          className="hero-card-right"
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease, delay: 0.6 }}
+        >
           <div className="card-header">
             <span className="title">رول دارچینی</span>
             <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -41,7 +56,7 @@ export default function Hero() {
             alt="رول دارچینی تازه پخته"
             loading="lazy"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   )

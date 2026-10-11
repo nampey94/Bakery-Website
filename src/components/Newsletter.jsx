@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { useReveal } from '../hooks/useReveal.js'
+import { motion } from 'framer-motion'
+import { fadeUp, viewport } from '../hooks/motion.js'
 import './Newsletter.css'
 
 export default function Newsletter() {
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState('idle') // idle | success | error
-  const { ref, visible } = useReveal()
+  const [status, setStatus] = useState('idle')
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -19,8 +19,14 @@ export default function Newsletter() {
   }
 
   return (
-    <section className={`newsletter reveal${visible ? ' is-visible' : ''}`} ref={ref} id="newsletter">
-      <div className={`newsletter-inner${visible ? ' is-visible' : ''}`}>
+    <motion.section
+      className="newsletter"
+      id="newsletter"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+    >
+      <motion.div className="newsletter-inner" variants={fadeUp}>
         <h2>تازه از تنور.</h2>
         <p>اخبار نانوایی، محصولات فصلی و نان تازه را در ایمیل خود دریافت کنید.</p>
         <form className="newsletter-form" onSubmit={handleSubmit} noValidate>
@@ -32,13 +38,19 @@ export default function Newsletter() {
             aria-label="آدرس ایمیل"
             aria-invalid={status === 'error'}
           />
-          <button type="submit">عضویت</button>
+          <motion.button
+            type="submit"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            عضویت
+          </motion.button>
         </form>
         {status === 'error' && <div className="newsletter-error">لطفاً یک آدرس ایمیل معتبر وارد کنید.</div>}
         {status === 'success' && (
           <div className="newsletter-success show">سپاسگزاریم! شما در لیست هستید. 🥐</div>
         )}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }

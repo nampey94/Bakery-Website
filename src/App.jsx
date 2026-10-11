@@ -18,6 +18,7 @@ import ContactPage from './components/ContactPage.jsx'
 import BakeryMenu from './components/BakeryMenu.jsx'
 import CheckoutPage from './components/CheckoutPage.jsx'
 import Footer from './components/Footer.jsx'
+import { MotionConfig } from 'framer-motion'
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -55,6 +56,7 @@ export default function App() {
   }, [location.pathname, navigate])
 
   return (
+    <MotionConfig reducedMotion="user">
     <CartProvider>
       <div className="page">
         <AnnouncementBar />
@@ -92,5 +94,6 @@ export default function App() {
       <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
       <CartDrawer />
     </CartProvider>
+    </MotionConfig>
   )
 }

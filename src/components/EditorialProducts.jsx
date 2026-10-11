@@ -1,12 +1,19 @@
-import { useReveal } from '../hooks/useReveal.js'
+import { motion } from 'framer-motion'
+import { fadeUp, viewport } from '../hooks/motion.js'
 import './EditorialProducts.css'
 
 export default function EditorialProducts() {
-  const { ref, visible } = useReveal()
   return (
-    <section className={`editorial reveal${visible ? ' is-visible' : ''}`} ref={ref} id="editorial">
+    <motion.section
+      className="editorial"
+      id="editorial"
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+    >
       <span className="micro-label label">محصولات</span>
-      <div className={`big-text${visible ? ' is-visible' : ''}`}>LOAFA</div>
+      <div className="big-text">LOAFA</div>
       <div className="bread-wrap">
         <img
           src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=85&auto=format&fit=crop"
@@ -20,14 +27,18 @@ export default function EditorialProducts() {
           loading="lazy"
         />
       </div>
-      <div className="product-card">
+      <motion.div
+        className="product-card"
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.25 }}
+      >
         <div className="info">
           <div className="sub">سنتی</div>
           <div className="name">خمیر ترش</div>
         </div>
         <div className="price">$8</div>
         <div className="badge">39</div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }

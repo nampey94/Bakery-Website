@@ -1,11 +1,17 @@
-import { useReveal } from '../hooks/useReveal.js'
+import { motion } from 'framer-motion'
+import { fadeUp, staggerContainer, staggerItem, viewport } from '../hooks/motion.js'
 import './About.css'
 
 export default function About() {
-  const { ref, visible } = useReveal()
   return (
-    <section className={`about reveal${visible ? ' is-visible' : ''}`} ref={ref} id="about">
-      <div className={`about-grid${visible ? ' is-visible' : ''}`}>
+    <motion.section
+      className="about"
+      id="about"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+    >
+      <motion.div className="about-grid" variants={fadeUp}>
         <div className="about-images">
           <img className="main-img"
             src="https://images.unsplash.com/photo-1693483640461-267d788b6148?w=800&q=85&auto=format&fit=crop"
@@ -18,22 +24,22 @@ export default function About() {
           <h2>لوفا یک نانوایی سنتی مدرن است که حول مواد ساده، صنعت دقیق و آیین‌های روزمره ساخته شده است.</h2>
           <p>هر نان و شیرینی پیش از طلوع آفتاب شروع می‌شود. ما در دسته‌های کوچک مخلوط، شکل و پخت می‌کنیم تا آنچه می‌چشیدید ساعت‌ها — نه روزها — پیش ساخته شده باشد.</p>
           <p>بی‌راه‌رو، بدون مواد نگهدارنده. فقط آرد، آب، نمک، زمان و گرمی یک تنور واقعی.</p>
-          <div className="about-stats">
-            <div className="about-stat">
+          <motion.div className="about-stats" variants={staggerContainer}>
+            <motion.div className="about-stat" variants={staggerItem}>
               <div className="num">۱۲+</div>
               <div className="label">سال صنعت</div>
-            </div>
-            <div className="about-stat">
+            </motion.div>
+            <motion.div className="about-stat" variants={staggerItem}>
               <div className="num">۲۴</div>
               <div className="label">پخت روزانه</div>
-            </div>
-            <div className="about-stat">
+            </motion.div>
+            <motion.div className="about-stat" variants={staggerItem}>
               <div className="num">۱۰۰٪</div>
               <div className="label">مواد تازه</div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }

@@ -1,5 +1,6 @@
+import { motion } from 'framer-motion'
 import { reviews } from '../data/products.js'
-import { useReveal } from '../hooks/useReveal.js'
+import { fadeUp, staggerContainer, staggerItem, hoverLift, viewport } from '../hooks/motion.js'
 import './Reviews.css'
 
 function Stars({ count }) {
@@ -15,22 +16,32 @@ function Stars({ count }) {
 }
 
 export default function Reviews() {
-  const { ref, visible } = useReveal()
   return (
-    <section className={`reviews reveal${visible ? ' is-visible' : ''}`} ref={ref} id="reviews">
-      <h2 className={visible ? ' is-visible' : ''}>نظرات</h2>
-      <div className="reviews-scroll">
+    <motion.section
+      className="reviews"
+      id="reviews"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+    >
+      <motion.h2 variants={fadeUp}>نظرات</motion.h2>
+      <motion.div className="reviews-scroll" variants={staggerContainer}>
         {reviews.map((r) => (
-          <article className="review-card" key={r.id}>
+          <motion.article
+            className="review-card"
+            key={r.id}
+            variants={staggerItem}
+            whileHover={hoverLift}
+          >
             <Stars count={r.rating} />
             <p className="text">"{r.text}"</p>
             <div className="author">
               <div className="name">{r.name}</div>
               <div className="location">{r.location}</div>
             </div>
-          </article>
+          </motion.article>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }

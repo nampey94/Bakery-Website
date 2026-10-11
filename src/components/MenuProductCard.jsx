@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { useCart } from '../context/CartContext.jsx'
+import { staggerItem, hoverLift, tapPress } from '../hooks/motion.js'
 import './MenuProductCard.css'
 
 export default function MenuProductCard({ product }) {
@@ -14,7 +16,11 @@ export default function MenuProductCard({ product }) {
   }
 
   return (
-    <article className="menu-card">
+    <motion.article
+      className="menu-card"
+      variants={staggerItem}
+      whileHover={hoverLift}
+    >
       <div className="menu-card-img">
         <img src={product.image} alt={product.name} loading="lazy" />
       </div>
@@ -24,30 +30,34 @@ export default function MenuProductCard({ product }) {
         <div className="menu-card-price">${product.price}</div>
         <div className="menu-card-actions">
           <div className="menu-qty">
-            <button
+            <motion.button
               onClick={() => setQty((q) => Math.max(0, q - 1))}
               disabled={qty === 0}
               aria-label="کاهش تعداد"
+              whileTap={{ scale: 0.9 }}
             >
               −
-            </button>
+            </motion.button>
             <span className="menu-qty-val">{qty}</span>
-            <button
+            <motion.button
               onClick={() => setQty((q) => q + 1)}
               aria-label="افزایش تعداد"
+              whileTap={{ scale: 0.9 }}
             >
               +
-            </button>
+            </motion.button>
           </div>
-          <button
+          <motion.button
             className="menu-add-btn"
             disabled={qty === 0}
             onClick={handleAdd}
+            whileHover={{ scale: 1.03 }}
+            whileTap={tapPress}
           >
             {qty > 0 ? `افزودن ${qty} به سفارش` : 'افزودن به سفارش'}
-          </button>
+          </motion.button>
         </div>
       </div>
-    </article>
+    </motion.article>
   )
 }

@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { useReveal } from '../hooks/useReveal.js'
+import { motion } from 'framer-motion'
+import { fadeUp, staggerContainer, staggerItem, viewport } from '../hooks/motion.js'
 import './ContactPage.css'
 
 export default function ContactPage() {
-  const { ref, visible } = useReveal()
   const [sent, setSent] = useState(false)
 
   const handleSubmit = (e) => {
@@ -14,24 +14,30 @@ export default function ContactPage() {
   }
 
   return (
-    <section className={`contact-page reveal${visible ? ' is-visible' : ''}`} ref={ref} id="contact">
-      <div className={`contact-page-inner${visible ? ' is-visible' : ''}`}>
+    <motion.section
+      className="contact-page"
+      id="contact"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+    >
+      <motion.div className="contact-page-inner" variants={fadeUp}>
         <span className="micro-label">در تماس باشید</span>
         <h1 className="contact-page-title">تماس با ما</h1>
 
         <div className="contact-page-grid">
-          <div className="contact-page-info">
-            <p className="contact-page-intro">
+          <motion.div className="contact-page-info" variants={staggerContainer}>
+            <motion.p className="contact-page-intro" variants={staggerItem}>
               دوست داریم از شما بشنویم — چه سفارش ویژه، چه پرسشی درباره پخت روزانه،
               و چه فقط برای سلام.
-            </p>
+            </motion.p>
 
-            <div className="contact-row">
+            <motion.div className="contact-row" variants={staggerItem}>
               <span className="label">آدرس</span>
               <span className="value">42 Redchurch Street, Shoreditch, London E2 7DP</span>
-            </div>
+            </motion.div>
 
-            <div className="contact-row">
+            <motion.div className="contact-row" variants={staggerItem}>
               <span className="label">ساعات کاری</span>
               <div className="hours">
                 <div>
@@ -43,20 +49,20 @@ export default function ContactPage() {
                   <div className="value sub">08:00–17:00</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="contact-row">
+            <motion.div className="contact-row" variants={staggerItem}>
               <span className="label">تلفن</span>
               <span className="value">+44 20 7946 0321</span>
-            </div>
+            </motion.div>
 
-            <div className="contact-row">
+            <motion.div className="contact-row" variants={staggerItem}>
               <span className="label">ایمیل</span>
               <span className="value">hello@loafa.co</span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="contact-page-form-wrap">
+          <motion.div className="contact-page-form-wrap" variants={fadeUp}>
             <form className="contact-form" onSubmit={handleSubmit}>
               <h3>برای ما پیام بفرستید</h3>
               <div className="form-field">
@@ -75,11 +81,16 @@ export default function ContactPage() {
                 <label htmlFor="cf-message">پیام</label>
                 <textarea id="cf-message" rows="5" placeholder="بیشتر توضیح دهید..." required></textarea>
               </div>
-              <button type="submit" className="btn-pill btn-pill-dark contact-submit">
+              <motion.button
+                type="submit"
+                className="btn-pill btn-pill-dark contact-submit"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
                 {sent ? 'پیام ارسال شد ✓' : 'ارسال پیام'}
-              </button>
+              </motion.button>
             </form>
-          </div>
+          </motion.div>
         </div>
 
         <div className="contact-page-map">
@@ -95,7 +106,7 @@ export default function ContactPage() {
             </svg>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }

@@ -1,14 +1,27 @@
+import { motion } from 'framer-motion'
 import { featuredCategories } from '../data/products.js'
-import { useReveal } from '../hooks/useReveal.js'
+import { staggerContainer, staggerItem, hoverLift, viewport } from '../hooks/motion.js'
 import './FeaturedProducts.css'
 
 export default function FeaturedProducts() {
-  const { ref, visible } = useReveal()
   return (
-    <section className={`featured reveal${visible ? ' is-visible' : ''}`} ref={ref} id="featured">
-      <div className={`featured-grid${visible ? ' is-visible' : ''}`}>
+    <motion.section
+      className="featured"
+      id="featured"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+    >
+      <motion.div className="featured-grid" variants={staggerContainer}>
         {featuredCategories.map((cat, i) => (
-          <article className="featured-card" key={cat.id} tabIndex={0} aria-label={cat.name}>
+          <motion.article
+            className="featured-card"
+            key={cat.id}
+            tabIndex={0}
+            aria-label={cat.name}
+            variants={staggerItem}
+            whileHover={hoverLift}
+          >
             <span className="index">({i + 1})</span>
             <span className="arrow">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -17,9 +30,9 @@ export default function FeaturedProducts() {
               </svg>
             </span>
             <img src={cat.image} alt={cat.name} loading="lazy" />
-          </article>
+          </motion.article>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }

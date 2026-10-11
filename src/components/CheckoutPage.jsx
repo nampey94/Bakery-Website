@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { useCart } from '../context/CartContext.jsx'
+import { fadeUp, staggerContainer, staggerItem } from '../hooks/motion.js'
 import './CheckoutPage.css'
 
 export default function CheckoutPage() {
@@ -23,7 +25,12 @@ export default function CheckoutPage() {
   if (placed) {
     return (
       <section className="checkout-page">
-        <div className="checkout-success">
+        <motion.div
+          className="checkout-success"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="success-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
@@ -31,10 +38,15 @@ export default function CheckoutPage() {
           </div>
           <h2>سفارش شما ثبت شد!</h2>
           <p>از سفارش شما سپاسگزاریم. به‌زودی برای هماهنگی تحویل با شما تماس می‌گیریم.</p>
-          <button className="btn-pill btn-pill-dark" onClick={() => navigate('/')}>
+          <motion.button
+            className="btn-pill btn-pill-dark"
+            onClick={() => navigate('/')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
             بازگشت به خانه
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </section>
     )
   }
@@ -42,29 +54,49 @@ export default function CheckoutPage() {
   if (items.length === 0) {
     return (
       <section className="checkout-page">
-        <div className="checkout-success">
+        <motion.div
+          className="checkout-success"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <h2>سبد خرید شما خالی است</h2>
           <p>برای تسویه حساب، ابتدا محصولات را به سبد اضافه کنید.</p>
-          <button className="btn-pill btn-pill-dark" onClick={() => navigate('/menu')}>
+          <motion.button
+            className="btn-pill btn-pill-dark"
+            onClick={() => navigate('/menu')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
             مشاهده منو
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </section>
     )
   }
 
   return (
-    <section className="checkout-page">
+    <motion.section
+      className="checkout-page"
+      variants={fadeUp}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="checkout-header">
         <span className="micro-label">تسویه حساب</span>
         <h1>تکمیل سفارش</h1>
       </div>
       <div className="checkout-container">
-        <div className="checkout-summary">
+        <motion.div
+          className="checkout-summary"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+        >
           <h2>خلاصه سفارش</h2>
           <div className="checkout-items">
             {items.map((item) => (
-              <div className="checkout-item" key={item.id}>
+              <motion.div className="checkout-item" key={item.id} variants={staggerItem}>
                 <img src={item.image} alt={item.name} />
                 <div className="checkout-item-info">
                   <span className="checkout-item-name">{item.name}</span>
@@ -75,16 +107,22 @@ export default function CheckoutPage() {
                 <span className="checkout-item-subtotal">
                   ${item.price * item.qty}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </div>
           <div className="checkout-total">
             <span>جمع کل</span>
             <span>${subtotal}</span>
           </div>
-        </div>
+        </motion.div>
 
-        <form className="checkout-form" onSubmit={handleSubmit}>
+        <motion.form
+          className="checkout-form"
+          onSubmit={handleSubmit}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+        >
           <h2>اطلاعات تماس</h2>
           <p className="checkout-note">
             پرداخت آنلاین فعال نیست. سفارش شما ثبت می‌شود و ما برای هماهنگی پرداخت
@@ -126,11 +164,16 @@ export default function CheckoutPage() {
               onChange={(e) => setForm({ ...form, address: e.target.value })}
             />
           </div>
-          <button type="submit" className="btn-pill btn-pill-dark checkout-submit">
+          <motion.button
+            type="submit"
+            className="btn-pill btn-pill-dark checkout-submit"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
             ثبت سفارش
-          </button>
-        </form>
+          </motion.button>
+        </motion.form>
       </div>
-    </section>
+    </motion.section>
   )
 }
