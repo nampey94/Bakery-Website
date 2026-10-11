@@ -2,6 +2,7 @@ import './MobileMenu.css'
 
 export default function MobileMenu({ open, onClose, onNavClick }) {
   const links = [
+    { label: 'منو', id: 'menu' },
     { label: 'محصولات', id: 'catalog' },
     { label: 'درباره ما', id: 'about' },
     { label: 'نظرات', id: 'reviews' },

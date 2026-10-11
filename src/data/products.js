@@ -187,3 +187,47 @@ export const reviews = [
     rating: 5,
   },
 ]
+
+// Pastries from the bakery menu photo — 4 distinct types
+export const menuProducts = [
+  {
+    id: 'menu-swirl-pastry',
+    name: 'شیرینی گرد شکلاتی',
+    description: 'خمیر لایه‌ای مارپیچی با پر کردن شکلات تلخ والرونا، طلایی و ترد.',
+    price: 6,
+    category: 'شیرینی‌ها',
+    image: 'https://images.unsplash.com/photo-1756137939545-f2daf3d0742c?w=800&q=80&auto=format&fit=crop',
+    ingredients: ['کره فرانسوی', 'شکلات والرونا', 'آرد ارگانیک', 'مخمر طبیعی'],
+    allergens: ['گلوتن', 'لبنیات'],
+  },
+  {
+    id: 'menu-butter-croissant',
+    name: 'کروسان کره‌ای',
+    description: 'خمیر لایه‌ای کلاسیک، تخمیر سرد ۷۲ ساعته، طلایی و ترد.',
+    price: 5,
+    category: 'شیرینی‌ها',
+    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80&auto=format&fit=crop',
+    ingredients: ['کره فرانسوی', 'آرد ارگانیک', 'نمک دریا', 'مخمر طبیعی'],
+    allergens: ['گلوتن', 'لبنیات'],
+  },
+  {
+    id: 'menu-chocolate-croissant',
+    name: 'کروسان شکلاتی',
+    description: 'کروسان کره‌ای با لایه‌های شکلات تلخ، پخته شده تا کمال.',
+    price: 6,
+    category: 'شیرینی‌ها',
+    image: 'https://images.unsplash.com/photo-1738824921940-02639f908ff0?w=800&q=80&auto=format&fit=crop',
+    ingredients: ['کره فرانسوی', 'شکلات تلخ', 'آرد ارگانیک', 'مخمر طبیعی'],
+    allergens: ['گلوتن', 'لبنیات'],
+  },
+  {
+    id: 'menu-swirl-bun',
+    name: 'رول گرد شکلاتی',
+    description: 'خمیر لایه‌ای گرد با مارپیچ شکلاتی و پر کردن شکلات تلخ.',
+    price: 6,
+    category: 'شیرینی‌ها',
+    image: 'https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=800&q=80&auto=format&fit=crop',
+    ingredients: ['خمیر دانیش', 'شکلات والرونا', 'کره فرانسوی', 'روم تخم‌مرغ'],
+    allergens: ['گلوتن', 'لبنیات', 'تخم‌مرغ'],
+  },
+]

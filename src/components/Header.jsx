@@ -19,6 +19,7 @@ export default function Header({ onNavClick, onOpenMenu, menuOpen }) {
       </a>
       <div className="nav-right">
         <nav className="nav-links" aria-label="ناوبری اصلی">
+          <a className="nav-link" href="/menu" onClick={(e) => onNavClick(e, 'menu')}>منو</a>
           <a className="nav-link" href="#catalog" onClick={(e) => onNavClick(e, 'catalog')}>محصولات</a>
           <a className="nav-link" href="#about" onClick={(e) => onNavClick(e, 'about')}>درباره ما</a>
           <a className="nav-link" href="#reviews" onClick={(e) => onNavClick(e, 'reviews')}>نظرات</a>

@@ -15,6 +15,8 @@ import About from './components/About.jsx'
 import Reviews from './components/Reviews.jsx'
 import Newsletter from './components/Newsletter.jsx'
 import ContactPage from './components/ContactPage.jsx'
+import BakeryMenu from './components/BakeryMenu.jsx'
+import CheckoutPage from './components/CheckoutPage.jsx'
 import Footer from './components/Footer.jsx'
 
 export default function App() {
@@ -30,6 +32,11 @@ export default function App() {
   const handleNavClick = useCallback((e, id) => {
     e.preventDefault()
     setMenuOpen(false)
+
+    if (id === 'menu') {
+      navigate('/menu')
+      return
+    }
 
     if (id === 'contact') {
       navigate('/contact')
@@ -81,6 +88,8 @@ export default function App() {
                   <Newsletter />
                 </>
               } />
+              <Route path="/menu" element={<BakeryMenu />} />
+              <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </main>
